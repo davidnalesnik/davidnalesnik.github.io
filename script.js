@@ -2,7 +2,7 @@ const input = document.getElementById('displacements');
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-ctx.font = '16px Arial';
+ctx.font = '24px Arial';
 
 // VARIABLES FOR LINES
 const semitoneVerticalSpacing = 50;
