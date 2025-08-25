@@ -181,15 +181,28 @@ function checkMelodyAlignment() {
 
 // EVENT LISTENERS
 
-document.getElementById('show-melody').addEventListener('click', () => {
-  melodySemitonePattern = input.value
-    .match(inputRegex)
-    .map((s) => parseInt(s, 10));
+document.getElementById('show-melody').addEventListener('click', (ev) => {
+  if (!input.value) {
+    alert('Enter something first');
+    return;
+  }
 
-  main();
-});
+  if (ev.target.classList.contains('draw')) {
+    melodySemitonePattern = input.value
+      .match(inputRegex)
+      .map((s) => parseInt(s, 10));
 
-document.getElementById('reset').addEventListener('click', () => {
+    ev.target.classList.remove('draw');
+    ev.target.textContent = 'Reset';
+
+    main();
+
+    return;
+  }
+
+  ev.target.classList.add('draw');
+  ev.target.textContent = 'Go';
+
   reset();
 });
 
