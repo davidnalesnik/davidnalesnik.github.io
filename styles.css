@@ -20,6 +20,7 @@ button {
 
 canvas {
     touch-action: none;
+    user-select: none;
 }
 
 #canvas-container {
