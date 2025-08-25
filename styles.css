@@ -12,6 +12,16 @@ body {
     color: #222;
 }
 
+input,
+button {
+    font-size: large;
+    padding: 0.25em;
+}
+
+canvas {
+    touch-action: none;
+}
+
 #canvas-container {
     display: flex;
     justify-content: center;
@@ -23,10 +33,4 @@ body {
     display: flex;
     justify-content: center;
     gap: 1em;
-}
-
-input,
-button {
-    font-size: large;
-    padding: 0.25em;
 }
