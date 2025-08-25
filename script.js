@@ -1,4 +1,5 @@
 const input = document.getElementById('displacements');
+const inputRegex = /-?\d+/g;
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
@@ -181,7 +182,9 @@ function checkMelodyAlignment() {
 // EVENT LISTENERS
 
 document.getElementById('show-melody').addEventListener('click', () => {
-  melodySemitonePattern = input.value.split(' ').map((s) => parseInt(s, 10));
+  melodySemitonePattern = input.value
+    .match(inputRegex)
+    .map((s) => parseInt(s, 10));
 
   main();
 });
